@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Todo } from '../../models/Todo.type';
 import { NgFor } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-todo',
-  imports: [NgFor],
+  imports: [NgFor, FormsModule],
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.css',
 })
@@ -23,4 +24,16 @@ export class TodoComponent {
       },
     ];
   }
+
+  toggleDone(id: number) {
+    this.todos.map((v, i) => {
+      if (i == id) v.completed = !v.completed;
+      return v;
+    });
+  }
+
+  delete(id: number) {
+    this.todos = this.todos.filter((v, i) => i !== id);
+  }
+  inputTodo = signal('');
 }
