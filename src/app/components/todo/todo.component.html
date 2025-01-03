@@ -1,4 +1,4 @@
-<div class="todos">
+<div class="new-todo">
   <form (submit)="addTodo()">
     <input
       type="text"
@@ -12,7 +12,7 @@
 </div>
 
 <div
-  class="todo-item"
+  class="todos"
   *ngFor="let todo of todos; let i = index"
   class="{{ todo.completed ? 'done' : '' }}"
 >

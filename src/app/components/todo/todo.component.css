@@ -1,7 +1,11 @@
-.todo-item {
+.todos {
+  display: flex;
+  padding: 10px 4px;
+  margin: 10px 0px;
+  justify-content: space-between;
   cursor: pointer;
 }
 
-.todo-item.done {
+.todos.done {
   background: green;
 }
