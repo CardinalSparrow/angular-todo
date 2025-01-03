@@ -35,5 +35,12 @@ export class TodoComponent {
   delete(id: number) {
     this.todos = this.todos.filter((v, i) => i !== id);
   }
-  inputTodo = signal('');
+  inputTodo = '';
+
+  addTodo() {
+    this.todos.push({
+      content: this.inputTodo,
+      completed: false,
+    });
+  }
 }
