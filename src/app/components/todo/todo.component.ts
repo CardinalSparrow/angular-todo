@@ -36,11 +36,13 @@ export class TodoComponent {
     this.todos = this.todos.filter((v, i) => i !== id);
   }
   inputTodo = '';
+  status = false;
 
   addTodo() {
     this.todos.push({
       content: this.inputTodo,
-      completed: false,
+      completed: this.status,
     });
+    console.log(this);
   }
 }

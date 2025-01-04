@@ -7,6 +7,7 @@
       class="input"
       [(ngModel)]="inputTodo"
     />
+    <input type="checkbox" name="status" class="input" [(ngModel)]="status" />
     <button type="submit">Add</button>
   </form>
 </div>
@@ -19,6 +20,7 @@
   <div class="todo-item" class="{{ todo.completed ? 'done' : '' }}">
     <h3 class="id">{{ i }}</h3>
     <h2 class="content">{{ todo.content }}</h2>
+    <input type="checkbox" [(ngModel)]="todo.completed" />
     <button class="delete" (click)="delete(i)">Remove</button>
   </div>
 </div>
