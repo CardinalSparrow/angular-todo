@@ -10,3 +10,7 @@
 .todo-item.done {
   background: green;
 }
+.new-todo input {
+  padding: 10px;
+  border-radius: 16px;
+}
